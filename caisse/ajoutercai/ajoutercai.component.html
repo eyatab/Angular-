@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+
+
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h3 class="title">Ajouter Caisse </h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <!--  code ************************************************************************* -->
+                        <div class="form-row">
+                            <div class="name">Code caisse</div>
+                            <div class="value">
+                                <div class="input-group-desc">
+                                    <input type="text" formControlName="codecaisse" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.codecaisse?.errors}">
+                                    <div *ngIf="submitted && f.codecaisse?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.codecaisse?.errors.required">Ce champ est obligatoire</div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!--  nom************************************************************************* -->
+                        <div class="form-row">
+                            <div class="name">Nom</div>
+                            <div class="value">
+                                <div class="input-group-desc">
+                                    <input class="input--style-5" type="text" formControlName="nomcaisse" class="form-control"
+                                        [ngClass]="{'is-invalid': submitted && f.nomcaisse?.errors}">
+                                    <div *ngIf="submitted && f.nomcaisse?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.nomcaisse?.errors.required">Ce champ est obligatoire</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  compte************************************************************************* -->
+                        <div class="form-row">
+                            <div class="name"> Compte</div>
+                            <div class="value">
+                                <div class="input-group-desc">
+                                    <input class="input--style-5" type="text" formControlName="cpte" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.cpte?.errors}">
+                                    <div *ngIf="submitted && f.cpte?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.cpte?.errors.required">Ce champ est obligatoire </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  montant************************************************************************* -->
+                        <div class="form-row">
+                            <div class="name"> Montant </div>
+                            <div class="value">
+                                <div class="input-group-desc">
+                                    <input class="input--style-5" type="text" formControlName="montant" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.montant?.errors}">
+                                    <div *ngIf="submitted && f.montant?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.montant?.errors.required">Ce champ est obligatoire</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="text-center">
+                            <button class="btn btn--radius-2 btn--red" type="submit"  > Ajouter</button>
+                            &nbsp;
+                            <button class="btn btn--radius-2 btn--red" type="reset"
+                                [routerLink]="['/pages/extra-components/alert']">Quitter </button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

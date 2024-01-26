@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h3 class="title"> Modifier opération</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="modifyForm" (ngSubmit)="onSubmit()" *ngIf="ope">
+                        <div class="form-row">
+                            <div class="name">Matricule</div>
+                            <div class="value ">
+                                <div class="input-group">
+                                    <input placeholder="Matricule" formControlName="matricule" class="form-control" type="text" name="Matricule" [(ngModel)]="ope.matricule" [ngClass]="{ 'is-invalid': submitted && f.matricule?.errors }">
+                                            <div *ngIf="submitted && f.matricule?.errors" class="invalid-feedback">
+                                               <div *ngIf="f.matricule?.errors.required">Ce champ est obliatoire</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Reçu</div>
+                            <div class="value ">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Reçu" formControlName="recu" class="form-control " name="recu"
+                                        [(ngModel)]="ope.typerecu"
+                                        [ngClass]="{ 'is-invalid': submitted && f.recu?.errors }">
+                                    <div *ngIf="submitted && f.recu?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.recu?.errors.required">Ce champ est obliatoire</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Opération</div>
+                            <div class="value ">
+                                <div class="input-group">
+                                    <input type="text" formControlName="operation" class="form-control "
+                                        name="operation" placeholder="Opération "[(ngModel)]="ope.typeoperation"
+                                        [ngClass]="{ 'is-invalid': submitted && f.operation?.errors }">
+                                    <div *ngIf="submitted && f.operation?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.operation?.errors.required">Ce champ est obliatoire</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Somme</div>
+                            <div class="value ">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Somme " formControlName="somme" class="form-control " name="somme"
+                                        [(ngModel)]="ope.somme" 
+                                        [ngClass]="{ 'is-invalid': submitted && f.somme?.errors }">
+                                    <div *ngIf="submitted && f.somme?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.somme?.errors.required">Ce champ est obliatoire</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Motif</div>
+                            <div class="value ">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Motif"formControlName="motif" class="form-control " name="motif"
+                                        [(ngModel)]="ope.motif"
+                                        [ngClass]="{ 'is-invalid': submitted && f.motif?.errors }">
+                                    <div *ngIf="submitted && f.motif?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.motif?.errors.required">Ce champ est obliatoire</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name"> Arrêtée</div>
+                            <label> {{ope.arretee}} </label>
+                        </div>
+                        <div class="form-row">
+                            <div class="name"> Imprimée</div>
+                            <label> {{ope.imprimee}} </label>
+                        </div>
+                        <!--(click)="modify(pro.id,pro.matricule,pro.role)"-->
+                        <div class="text-center">
+                            <button class="btn btn--radius-2 btn--red" type="submit">Modifier</button>
+
+                            &nbsp;
+                            <button class="btn btn--radius-2 btn--red"
+                                [routerLink]="['/pages/modal-overlays/dialog']">Quitter </button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

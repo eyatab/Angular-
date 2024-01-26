@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h3 class="title"> Modifier informations personnelles </h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="modifyForm" (ngSubmit)="onSubmit()" *ngIf="pro">
+                        <div class="form-row m-b-55" >
+                            <div class="name">Utilisateur </div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-5">
+                                        <div class="input-group-desc" >
+                                            <input placeholder="Nom" formControlName="nom" class="form-control " type="text" name="Nom" [(ngModel)]="pro.nom" [ngClass]="{ 'is-invalid': submitted && f.nom?.errors }">
+                                            <div *ngIf="submitted && f.nom?.errors" class="invalid-feedback">
+                                                <div *ngIf="f.nom?.errors.required">Ce champ est obligatoire</div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="input-group-desc">
+                                            <input type="text" name="Prenom" class="form-control " formControlName="prenom" placeholder="Prenom"  [(ngModel)]="pro.prenom" [ngClass]="{ 'is-invalid': submitted && f.prenom?.errors }">
+                                            <div *ngIf="submitted && f.prenom?.errors" class="invalid-feedback">
+                                                <div *ngIf="f.prenom?.errors.required">Ce champ est obligatoire</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name"> Matricule </div>
+                            <label> {{pro.matricule}} </label>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Email</div>
+                            <div class="value ">
+                                <div class="input-group">
+                                    <input  type="email" formControlName="email" class="form-control " name="email" [(ngModel)]="pro.email" [ngClass]="{ 'is-invalid': submitted && f.email?.errors }">
+                                    <div *ngIf="submitted && f.email?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.email?.errors.required">Ce champ est obliatoire</div>
+                                        <div *ngIf="f.email?.errors.email">Adresse email invalide </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+
+                        <div class="form-row">
+                            <div class="name"> Téléphone </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input  type="text" name="tel" class="form-control "formControlName="tel" [(ngModel)]="pro.tel" [ngClass]="{ 'is-invalid': submitted && f.tel?.errors }">
+                                    <div *ngIf="submitted && f.tel?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.tel.errors?.required"> Ce champ est obligatoire</div>
+                                        <div *ngIf="f.tel.errors?.maxlength">Ce champ doit contenir 8 chiffres</div>
+                                        <div *ngIf="f.tel.errors?.minlength">Ce champ doit contenir 8 chiffres</div>
+                                        <div *ngIf="f.tel.errors?.pattern">Ce champ doit contenir que des chiffres</div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                       
+                        <div class="form-row">
+                            <div class="name"> Profil </div>
+                            <label>  {{pro.role[0]}} </label>
+                        </div>
+                        
+                        
+                        <div class="text-center">
+                            <button class="btn btn--radius-2 btn--red" type="submit"  (click)="modify(pro.id,pro.matricule,pro.role,pro.password,pro.idcaisse)">Modifier</button>
+                        
+                        &nbsp;  
+                        <button class="btn btn--radius-2 btn--red" [routerLink]="['/profil']" >Quitter</button>
+                           
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+</body>
+
+</html>

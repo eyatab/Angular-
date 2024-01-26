@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+
+
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h3 class="title"> Détails utilisateur </h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div *ngIf="uti">
+                            <div>
+                              <label><b>Matricule : </b></label> {{uti.matricule}}
+                            </div>
+                            <div>
+                              <label><b>Nom : </b></label> {{uti.nom}}
+                            </div>
+                          
+                            <div>
+                              <label><b>Prenom : </b></label> {{uti.prenom}}
+                            </div>
+                            <div>
+                              <label><b>Email : </b></label> {{uti.email}}
+                            </div>
+                            <div>
+                              <label><b>Tel : </b></label> {{uti.tel}}
+                            </div>
+                            <div>
+                              <label><b>Etat : </b></label>  {{uti.enabled}}
+                            </div>
+                            <div>
+                              <label><b>Profil : </b></label> {{uti.role}}
+                            </div>
+                           
+                          
+                          </div>
+                        <br>
+                        <div class="text-center">
+                            <button class="btn btn--radius-2 btn--red" [routerLink]="['/pages/extra-components/calendar']" type="submit">Quitter</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+</body>
+
+</html>

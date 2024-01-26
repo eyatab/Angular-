@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h3 class="title">Ajouter Banque </h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div class="form-row">
+                            <div class="name">Code Banque</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input type="text" formControlName="codebq"  class="form-control "  [ngClass]="{ 'is-invalid': submitted && f.codebq?.errors }">
+                                    <div *ngIf="submitted && f.codebq?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.codebq?.errors.required">Ce champ est obligatoire</div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Raison sociale Banque</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input type="text"  formControlName="raisonsb"  class="form-control "  [ngClass]="{ 'is-invalid': submitted && f.raisonsb?.errors }">
+                                    <div *ngIf="submitted && f.raisonsb?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.raisonsb?.errors.required">Ce champ est obligatoire</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="name"> Code comptable banque </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input type="text"  formControlName="codecb"  class="form-control "  [ngClass]="{ 'is-invalid': submitted && f.codecb?.errors }">
+                                    <div *ngIf="submitted && f.codecb?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.codecb?.errors.required">Ce champ est obligatoire</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name"> Rib </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input type="text"  formControlName="rib"  class="form-control "  [ngClass]="{ 'is-invalid': submitted && f.rib?.errors }">
+                                    <div *ngIf="submitted && f.rib?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.rib?.errors.required">Ce champ est obligatoire</div>
+                                        </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="text-center">
+                            <button class="btn btn--radius-2 btn--red" type="submit">Ajouter</button>
+                            &nbsp;
+                            <button class="btn btn--radius-2 btn--red" type="submit"
+                                [routerLink]="['/pages/extra-components/chat']">Quitter </button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h3 class="title">Ajouter Type transaction</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div class="form-row">
+                            <div class="name">Code </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input type="text" formControlName="code"  class="form-control "  [ngClass]="{ 'is-invalid': submitted && f.code?.errors }">
+                                    <div *ngIf="submitted && f.code?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.code?.errors.required">Ce champ est obligatoire</div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Nom</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input type="text"  formControlName="nom"  class="form-control "  [ngClass]="{ 'is-invalid': submitted && f.nom?.errors }">
+                                    <div *ngIf="submitted && f.nom?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.nom?.errors.required">Ce champ est obligatoire</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="name"> Type opération </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input type="text"  formControlName="typeop"  class="form-control "  [ngClass]="{ 'is-invalid': submitted && f.typeop?.errors }">
+                                    <div *ngIf="submitted && f.typeop?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.typeop?.errors.required">Ce champ est obligatoire</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+
+
+
+                        <div class="text-center">
+                            <button class="btn btn--radius-2 btn--red" type="submit">Ajouter</button>
+                            &nbsp;
+                            <button class="btn btn--radius-2 btn--red" type="reset"
+                                [routerLink]="['/pages/modal-overlays/tooltip']">Quitter </button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

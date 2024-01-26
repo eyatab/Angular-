@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+
+
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h3 class="title">Changer de mot de passe </h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                      
+                               
+                        <div class="form-row">
+                            <div class="name">Matricule</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input type="text" formControlName="matricule" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && f.matricule.errors}" >
+                                    <div *ngIf="submitted && f.matricule?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.matricule?.errors.required">Ce champ est obligatoire</div>
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="name"> Nouveau mot de passe </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input type="password" formControlName="mdp" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && f.mdp?.errors}" >
+                                    <div *ngIf="submitted && f.mdp?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.mdp?.errors.required">Ce champ est obligatoire</div>
+                                        <div *ngIf="f.mdp?.errors.minlength">Ce champ doit contenir au moins 6 lettres</div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="form-row">
+                            <div class="name"> Confirmer mot de passe </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input type="password" formControlName="confmdp" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && f.confmdp?.errors}" >
+                                    <div *ngIf="submitted && f.confmdp?.errors" class="invalid-feedback">
+                                        <div *ngIf="f.confmdp?.errors.required">Ce champ est obligatoire</div>
+                                        <div *ngIf="f.confmdp?.errors.mustMatch">Vos mots de passe ne correspondent pas, Veuillez réessayer</div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+
+
+                        
+                        <div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <button class="btn btn--radius-2 btn--red" type="submit"> Modifier</button> &nbsp;
+                            <button class="btn btn--radius-2 btn--red" type="submit" [routerLink]="['/pages/dashboard']" > Quitter </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+</body>
+
+</html>

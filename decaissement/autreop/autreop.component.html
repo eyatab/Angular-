@@ -1,0 +1,95 @@
+<div class="card">
+    <h5 class="card-header">Caisse regionale de tunis &nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+      Décaissement </h5>
+    <div class="card-body">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <!--  ref************************************************************************* -->
+          <div class="input-group-desc">
+            Référence : &nbsp;&nbsp; <input type="text" shape="rectangle" placeholder="Référence"
+              formControlName="reference" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.reference?.errors}">
+            <div *ngIf="submitted && f.reference?.errors" class="invalid-feedback">
+              <div *ngIf="f.reference?.errors.required">Ce champ est obligatoire</div>
+            </div>
+  
+          </div>
+          <!--  matricule************************************************************************* -->
+          <div class="input-group-desc">
+            Matricule : &nbsp;&nbsp; <input type="text" nbInput shape="rectangle" placeholder="Matricule"
+              formControlName="matricule" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.matricule?.errors}">
+            <div *ngIf="submitted && f.matricule?.errors" class="invalid-feedback">
+              <div *ngIf="f.matricule?.errors.required">Ce champ est obligatoire</div>
+            </div>
+          </div>
+        </div>
+        <div> &nbsp; </div>
+        <div>
+          Nom : &nbsp;&nbsp; <input type="text" nbInput shape="rectangle" placeholder="Nom" formControlName="nom"
+            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nom?.errors}">
+          <div *ngIf="submitted && f.nom?.errors" class="invalid-feedback">
+            <div *ngIf="f.nom?.errors.required">Ce champ est obligatoire</div>
+          </div>
+          &nbsp;&nbsp;
+          Prénom : &nbsp;&nbsp; <input type="text" nbInput shape="rectangle" placeholder="Prénom" formControlName="prenom"
+            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.prenom?.errors}">
+          <div *ngIf="submitted && f.prenom?.errors" class="invalid-feedback">
+            <div *ngIf="f.prenom?.errors.required">Ce champ est obligatoire</div>
+          </div>&nbsp;&nbsp;
+          CIN : &nbsp;&nbsp; <input type="text" nbInput shape="rectangle" placeholder="CIN" formControlName="cin"
+            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cin?.errors}">
+          <div *ngIf="submitted && f.cin?.errors" class="invalid-feedback">
+            <div *ngIf="f.cin?.errors.required">Ce champ est obligatoire</div>
+          </div>
+        </div>
+        <div> &nbsp; </div>
+        <div>
+          Motif : &nbsp;&nbsp; <input type="text" nbInput shape="rectangle" placeholder="Motif" formControlName="motif"
+            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.motif?.errors}">
+          <div *ngIf="submitted && f.motif?.errors" class="invalid-feedback">
+            <div *ngIf="f.motif?.errors.required">Ce champ est obligatoire</div>
+          </div>&nbsp;&nbsp;
+          Somme : &nbsp;&nbsp; <input type="text" nbInput shape="rectangle" placeholder="Somme" formControlName="somme"
+            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.somme?.errors}">
+          <div *ngIf="submitted && f.somme?.errors" class="invalid-feedback">
+            <div *ngIf="f.somme?.errors.required">Ce champ est obligatoire</div>
+          </div>
+        </div>
+        <div> &nbsp;</div>
+        Type Reçu : &nbsp; &nbsp; &nbsp; &nbsp;
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="MD" checked>
+        <label class="form-check-label" for="exampleRadios1">
+          MD
+        </label>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="RAD">
+        <label class="form-check-label" for="exampleRadios2">
+          RAD
+        </label>
+  
+  
+  
+      </form>
+  
+  
+  
+  
+      <br> <br> <br>
+      <div class="col text-center">
+        <button type="button" class="btn btn-outline-success">Valider </button> &nbsp; <button type="button"
+          class="btn btn-outline-danger">Annuler</button>
+      </div>
+    </div>
+  </div>
